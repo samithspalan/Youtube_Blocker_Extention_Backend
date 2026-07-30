@@ -48,6 +48,9 @@ app.post('/api/blocks', async (req, res) => {
     }
 });
 
+// Mount Time spent tracking routes
+app.use('/api/time', require('./routes/time'));
+
 app.listen(PORT, () => {
     console.log(`Backend API running on http://localhost:${PORT}`);
 });
