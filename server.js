@@ -48,6 +48,12 @@ app.post('/api/blocks', async (req, res) => {
     }
 });
 
+// Route 3: Check database connection status
+app.get('/api/status', (req, res) => {
+    const isConnected = mongoose.connection.readyState === 1;
+    res.status(200).json({ success: true, dbConnected: isConnected });
+});
+
 // Mount Time spent tracking routes
 app.use('/api/time', require('./routes/time'));
 
