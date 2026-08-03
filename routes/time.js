@@ -110,7 +110,8 @@ router.get('/analytics', async (req, res) => {
                 // Hour-based units for clean Recharts display
                 studyHours: parseFloat(studyHours.toFixed(2)),
                 distractionHours: parseFloat(distractionHours.toFixed(2)),
-                totalHours: parseFloat(totalHours.toFixed(2))
+                totalHours: parseFloat(totalHours.toFixed(2)),
+                channels: log ? log.channels : []
             });
         }
 
